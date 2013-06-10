@@ -10,10 +10,16 @@ import os.path
 import importlib
 import inspect
 
+
 # Constants; because they make the code look nice.
 _MODULE_PATH_SEP = '.'
 _NAME = '__name__'
 _PATH = '__path__'
+
+
+def is_python_file(filename):
+    return filename.endswith('.py') and os.path.isfile(filename)
+
 
 class TypeFilter(object):
 
@@ -25,9 +31,6 @@ class PluginError(ImportError):
 
     def __init__(self, msg):
         self.msg = msg
-
-def is_python_file(filename):
-    return filename.endswith('.py') and os.path.isfile(filename)
 
 
 class ModuleInspector(object):
@@ -183,6 +186,7 @@ def import_module(module_name):
 
 def module_inspector():
     return _MOD_INSPECTOR
+
 
 def plug_into(*args):
     """

@@ -23,4 +23,3 @@ class EclipsePhaseRoll(terminal.TerminalApp):
 
     def roll(self, sides):
         return int(random.random() * sides)
-

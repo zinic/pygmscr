@@ -1,6 +1,7 @@
 import curses
 from . import directives
 
+
 class ComponentMessage(object):
 
     def __init__(self, directive, payload=None):

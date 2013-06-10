@@ -2,7 +2,9 @@ import pygmscr.ncurses as ncurses
 import pygmscr.plugin as plugin
 import pygmscr.terminal as terminal
 
+
 _TERMINAL_APP_CLASS = type(terminal.TerminalApp)
+
 
 def terminal_app_filter(_class):
     return issubclass(_class, _TERMINAL_APP_CLASS)

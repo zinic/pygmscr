@@ -11,8 +11,8 @@ class Roll(terminal.TerminalApp):
         return 'roll'
 
     def desc(self):
-        return """Makes a dice roll formatted with xds + c where x is the number of
-dice and s is the number of sides on the dice.
+        return """Makes a dice roll formatted with xds + c where x is the
+number of dice and s is the number of sides on the dice.
 """
 
     def run(self, terminal, args):
@@ -52,6 +52,3 @@ dice and s is the number of sides on the dice.
 
         output += '- Total: {}'.format(total)
         return output
-
-
-
