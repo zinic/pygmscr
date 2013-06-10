@@ -1,0 +1,23 @@
+
+
+EXIT = 'exit'
+CLEAR = 'clear'
+
+class ComponentMessage(object):
+
+    def __init__(self, directive, payload=None):
+        self.directive = directive
+        self.payload = payload
+
+
+class CursesComponent(object):
+
+    def on_input(self, char):
+        raise NotImplementedError
+
+    def refresh(self, screen):
+        raise NotImplementedError
+
+    def run(self):
+        raise NotImplementedError
+
