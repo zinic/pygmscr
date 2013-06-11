@@ -17,6 +17,7 @@ class Terminal(ncurses.CursesComponent):
 
     def __init__(self):
         self.current_input = ''
+        self.command_history = list()
         self.screen_output = list()
         self.applications = list()
 
@@ -44,12 +45,18 @@ class Terminal(ncurses.CursesComponent):
         if directive == ncurses.CLEAR:
             self.screen_output = list()
 
+    def append_history(self, command):
+        history_size = len(self.command_history)
+        if self.command_history[history_size] != command:
+            self.command_history.append(command)
+
     def user_command(self, command):
         self.screen_output.append(command)
         split_cmd = command.split(' ')
         application = self.find_app(split_cmd[0])
 
         if application:
+
             result = self.run_app(application, split_cmd[1:])
             if result:
                 self.process_directive(result.directive)

@@ -32,7 +32,7 @@ setup(
     license='Apache 2.0',
     classifiers=[
         'Development Status :: 3 - Alpha',
-        'Environment :: Console',
+        'Environment :: Console :: Curses',
         'Natural Language :: English',
         'Programming Language :: Python',
         'Programming Language :: Python :: Implementation :: CPython',

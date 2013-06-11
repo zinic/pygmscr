@@ -48,7 +48,7 @@ number of dice and s is the number of sides on the dice.
             roll = self.roll(number)
             total += roll
             output += '[{}]'.format(roll)
-            output += ',' if num_die > 0 else ' '
+            output += ', ' if num_die > 0 else ' '
 
         output += '- Total: {}'.format(total)
         return output
