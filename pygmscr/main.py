@@ -4,12 +4,14 @@ import pygmscr.ncurses as ncurses
 import pygmscr.terminal as terminal
 
 
+_TAPP = terminal.TerminalApp
+
 def terminal_app_filter(_class):
-    return issubclass(_class, terminal.TerminalApp)
+    return issubclass(_class, _TAPP)
 
 
 def load_stock(terminal):
-    modules = pynsive.list_classes('pygmscr.stock', terminal_app_filter)
+    modules = pynsive.discover_classes('pygmscr.stock')
     print('Num modules {} - {}'.format(len(modules), modules))
     for _class in modules:
         terminal.register_app(_class())

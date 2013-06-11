@@ -44,4 +44,5 @@ class ScreenDriver(object):
                     break
                 elif message.directive == directives.CLEAR:
                     self.screen.erase()
+            self.screen.erase()
             parent_component.refresh(self.screen)
